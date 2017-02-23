@@ -1,4 +1,9 @@
-import { Component } from '@angular/core';
+import { Component, 
+         ViewChild, AfterViewInit             //<--Added
+         } from '@angular/core';
+
+import { ChickenListComponent } from './chicken-list/chicken-list.component';   //<--Added
+import { Chicken } from './chicken/chicken.model';    //<--Added
 
 @Component({
   selector: 'app-root',
@@ -6,11 +11,22 @@ import { Component } from '@angular/core';
   styleUrls: ['./app.component.css']
 })
 export class AppComponent {
-  title = 'app works!';
 
-  addChicken(name: HTMLInputElement, breed: HTMLInputElement): boolean {
+  @ViewChild(ChickenListComponent) chickenList: ChickenListComponent //<--Added
+
+  ngAfterViewInit(){
+        console.log('How many Chickens: ' + this.chickenList.chickens.length);
+  }
+
+  addChicken(name: HTMLInputElement, breed: HTMLInputElement): boolean {       //<--Added
     console.log(`Adding Chicken name: ${name.value} breed: ${breed.value}`);
+
+    let newChicken:Chicken = new Chicken(name.value, 0, breed.value );
+    name.value = '';
+    breed.value = '';
+
+    this.chickenList.addChicken(newChicken);
     return false;
   }
-  
+
 }

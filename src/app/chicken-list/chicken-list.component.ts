@@ -18,10 +18,14 @@ export class ChickenListComponent implements OnInit {
     lineup.push(new Chicken('Pickles', 3, 'Rhode Island Red'));
     lineup.push(new Chicken('Nugget'));
     this.chickens = lineup;
-    
+
   }
 
   ngOnInit() {
+  }
+
+  public addChicken(newLilClucker:Chicken) {  
+    this.chickens.push(newLilClucker);
   }
 
 }
