@@ -7,4 +7,10 @@ import { Component } from '@angular/core';
 })
 export class AppComponent {
   title = 'app works!';
+
+  addChicken(name: HTMLInputElement, breed: HTMLInputElement): boolean {
+    console.log(`Adding Chicken name: ${name.value} breed: ${breed.value}`);
+    return false;
+  }
+  
 }
