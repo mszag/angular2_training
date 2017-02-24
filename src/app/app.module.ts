@@ -5,6 +5,7 @@ import { HttpModule } from '@angular/http';
 
 import { AppComponent } from './app.component';
 import { AlertModule } from 'ng2-bootstrap';
+import { ButtonsModule } from 'ng2-bootstrap';
 import { ChickenListComponent } from './chicken-list/chicken-list.component';
 import { ChickenComponent } from './chicken/chicken.component';
 
@@ -16,6 +17,7 @@ import { ChickenComponent } from './chicken/chicken.component';
   ],
   imports: [
     AlertModule.forRoot(),
+    ButtonsModule.forRoot(),
     BrowserModule,
     FormsModule,
     HttpModule

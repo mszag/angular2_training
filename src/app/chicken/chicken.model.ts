@@ -15,6 +15,14 @@ export class Chicken {
         } else {
             this.breed = "Leghorn";
         }
+    }
 
+    addEgg () {
+        this.eggs++;
+    }
+    collectEggs() { 
+        let collected = this.eggs;
+        this.eggs = 0;
+        return collected;
     }
 }
